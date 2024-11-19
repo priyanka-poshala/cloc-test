@@ -1,4 +1,4 @@
-name: Generate and Use Ignored File
+name: Count Lines of Code and Generate Report
 
 on:
   push:
@@ -7,30 +7,16 @@ on:
       - master
 
 jobs:
-  cloc:
+  createFile:
+  - name: Create File
     runs-on: ubuntu-latest
 
     steps:
       # Step 1: Checkout repository
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      # - name: Checkout Repository
+        - uses: actions/checkout@v4
+        - uses: finnp/create-file-action@master
+          env:
+           FILE_NAME: "cloc-test/cloc.txt"
+           FILE_DATA: "file content"
 
-      # Step 2: Generate a file listed in .gitignore
-      - name: Generate Ignored File
-        run: |
-          mkdir -p temp-reports
-          echo "This is a generated report file, ignored by Git." > temp-reports/cloc-report.txt
-          echo "File generated at 'temp-reports/cloc-report.txt'."
-
-      # Step 3: Process the generated file (if needed)
-      - name: Use the Generated File
-        run: |
-          echo "Contents of the ignored file:"
-          cat temp-reports/cloc-report.txt
-
-      # (Optional) Use the file further in the workflow
-      - name: Archive the File (Optional)
-        uses: actions/upload-artifact@v3
-        with:
-          name: cloc-report
-          path: temp-reports/cloc-report.txt
