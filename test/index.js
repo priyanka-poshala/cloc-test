@@ -7,3 +7,7 @@ function getAdress(){
     console.log("india")
 } 
 getAdress()
+
+function email(){
+    console.log("abc@gmail.com")
+} 
