@@ -24,7 +24,7 @@ jobs:
           ls -l > textlist.txt
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add ./cloc.txt
+          git add .
           if ! git diff --quiet; then
             git commit -m "Add new file"
             git push origin main
