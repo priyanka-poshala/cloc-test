@@ -19,6 +19,8 @@ jobs:
         run: |
           mkdir -p test
           echo "This is the content of the new file." > test/newFile.txt
+          echo pwd
+          ls -l
       - name: Commit and Push Changes
         run: |
           git config --local user.name "github-actions[bot]"
