@@ -1,22 +1,31 @@
-name: Create A File
-# This workflow is triggered on pushes to the repository.
+name: Create File in Test Directory
 on:
   push:
     branches:
       - main
-
 jobs:
   createFile:
     name: Create A File
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: 1arp/create-a-file-action@0.4.5
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          path: 'cloc-test'
-          isAbsolutePath: false
-          file: 'foo.bar'
-          content: |
-            Hello
-            World
+      - name: Checkout repository
+        uses: actions/checkout@v4
+     
+      - name: Create File
+        run: |
+          cd cloc-test
+          mkdir -p testa
+          echo "This is the content of the new file." > ./testa/newFile.txt
+          
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.name "GitHub Actions"
+          git config --local user.email "no-reply@github.com"
+          git add *
+          git commit -m "Update testa"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
