@@ -30,8 +30,7 @@ jobs:
           echo pwd
           ls -l
       - name: Commit and Push Changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       
 
         run: |
           git config --local user.name "github-actions[bot]"
