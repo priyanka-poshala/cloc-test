@@ -13,6 +13,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: 1arp/create-a-file-action@0.4.5
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           path: 'cloc-test'
           isAbsolutePath: false
           file: 'foo.bar'
