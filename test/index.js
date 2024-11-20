@@ -9,7 +9,7 @@ function getAdress(){
 getAdress()
 
 function email(){
-    console.log("abggSggddd@gmail.com")
+    console.log("aggSggddd@gmail.com")
 } 
 
 // name: Create File in Test Directory
