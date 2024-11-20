@@ -4,7 +4,7 @@ function getName(){
 getName()
 
 function getAdress(){
-    console.log("india")
+    console.log("hyderabad")
 } 
 getAdress()
 
