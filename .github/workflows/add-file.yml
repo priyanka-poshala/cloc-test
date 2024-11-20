@@ -16,7 +16,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: false
           fetch-depth: 0
-           path: 'src'
+          path: 'src'
           isAbsolutePath: false
           file: 'foo.bar'
           content: |
