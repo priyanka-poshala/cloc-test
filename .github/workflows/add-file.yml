@@ -7,8 +7,7 @@ jobs:
   createFile:
     name: Create A File
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+   
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
