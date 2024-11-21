@@ -20,12 +20,12 @@ jobs:
           # echo pwd
           # ls -l
      
-      - name: Install CLOC
-        run: sudo apt-get install -y cloc
+      # - name: Install CLOC
+      #   run: sudo apt-get install -y cloc
       
-      - name: Generate cloc json
-        run: |
-          cloc . --json > cloc.json
+      # - name: Generate cloc json
+      #   run: |
+      #     cloc . --json > cloc.json
           
 
       #  - name: Append cloc json
