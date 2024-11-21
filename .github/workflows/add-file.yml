@@ -23,9 +23,7 @@ jobs:
           sudo apt-get install -y cloc
           echo pwd
           ls -l
-       - name: Generate cloc json
-         run: |
-          cloc --json > cloc.json
+       
       - name: Commit and Push Changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
