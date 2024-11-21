@@ -26,9 +26,7 @@ jobs:
       - name: Generate cloc json
         run: |
           cloc . --json > cloc.json
-          echo "" >> test/newFile.json
-          echo "CLOC JSON OUTPUT:" >> json/newFile.json
-          cat cloc.jsonc >> json/newFile.json
+          
 
        - name: Append cloc json
          run: |
@@ -41,7 +39,6 @@ jobs:
       - name: Commit and Push Changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
