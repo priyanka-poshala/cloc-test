@@ -1,4 +1,1 @@
-<<<<<<< HEAD
-=======
 This is the content of the new file 1.
->>>>>>> e238470cf6d29367c077c664e49cba82be3aad24
