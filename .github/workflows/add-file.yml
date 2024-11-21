@@ -10,7 +10,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout Code
+      
       - uses: actions/checkout@v4
 
       - name: Create File in cloc test
@@ -20,8 +20,8 @@ jobs:
           # echo pwd
           # ls -l
      
-      # - name: Install CLOC
-      #   run: sudo apt-get install -y cloc
+      - name: Install CLOC
+        run: sudo apt-get install -y cloc
       
       # - name: Generate cloc json
       #   run: |
