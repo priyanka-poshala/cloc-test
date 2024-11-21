@@ -9,6 +9,6 @@ function getAdress(){
 getAdress()
 
 function email(){
-    console.log("aggSddddddddddfffffffffffffff@gmail.com")
+    console.log("aggdddddfffffffffffffff@gmail.com")
 } 
 
