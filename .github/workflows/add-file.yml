@@ -24,7 +24,7 @@ jobs:
           echo pwd
           ls -l
        - name: Generate cloc json
-        run: |
+         run: |
           cloc --json > cloc.json
       - name: Commit and Push Changes
         env:
