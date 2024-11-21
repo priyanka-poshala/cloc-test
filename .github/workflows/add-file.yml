@@ -11,17 +11,7 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      # - uses: 1arp/create-a-file-action@0.4.5
-      #   with:
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     persist-credentials: false
-      #     fetch-depth: 0
-      #     path: 'src'
-      #     isAbsolutePath: false
-      #     file: 'foo.bar'
-      #     content: |
-      #       Hello
-      #       World
+     
       - name: Create File in cloc test
         run: |
           mkdir -p json
