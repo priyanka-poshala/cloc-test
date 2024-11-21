@@ -6,29 +6,31 @@ on:
   workflow_dispatch:
 jobs:
   create-file:
-   
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
+      - name: Checkout Code
       - uses: actions/checkout@v4
-      # - uses: 1arp/create-a-file-action@0.4.5
-      #   with:
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     persist-credentials: false
-      #     fetch-depth: 0
-      #     path: 'src'
-      #     isAbsolutePath: false
-      #     file: 'foo.bar'
-      #     content: |
-      #       Hello
-      #       World
+
       - name: Create File in cloc test
         run: |
           mkdir -p json
           echo "This is the content of the new file 1." > json/newFile.txt
           echo pwd
           ls -l
+     
+      - name: Install CLOC
+        run: sudo apt-get install -y cloc
+      
+      - name: Count Lines Of Code and Save to newFile.txt
+        run: |
+          cloc . --json > newFile.txt
+          echo "" >> test/newFile.txt
+          echo "CLOC JSON OUTPUT:" >> json/newFile.txt
+          cat cloc.jsonc >> json/newFile.txt
+
+     
       - name: Commit and Push Changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
