@@ -20,7 +20,7 @@ jobs:
           ls -l
       - name: Install CLOC
         run: |
-        sudo apt-get install -y cloc
+          sudo apt-get install -y cloc
       - name: Commit and Push Changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
