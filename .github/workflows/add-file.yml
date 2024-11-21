@@ -16,19 +16,19 @@ jobs:
       - name: Create File in cloc test
         run: |
           mkdir -p json
-          echo "This is the content of the new file 1." > json/newFile.txt
+          echo "This is the content of the new file 1." > json/newFile.json
           # echo pwd
           # ls -l
      
       - name: Install CLOC
         run: sudo apt-get install -y cloc
       
-      - name: Count Lines Of Code and Save to newFile.txt
+      - name: Count Lines Of Code and Save to newFile.json
         run: |
-          cloc . --json > newFile.txt
-          echo "" >> test/newFile.txt
-          echo "CLOC JSON OUTPUT:" >> json/newFile.txt
-          cat cloc.jsonc >> json/newFile.txt
+          cloc . --json > newFile.json
+          echo "" >> test/newFile.json
+          echo "CLOC JSON OUTPUT:" >> json/newFile.json
+          cat cloc.jsonc >> json/newFile.json
 
      
       - name: Commit and Push Changes
@@ -38,7 +38,7 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add json/newFile.txt
+          git add json/newFile.json
           git commit -m "Add new file to cloc-test directory"
           git push origin main
           
