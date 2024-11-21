@@ -28,11 +28,11 @@ jobs:
           cloc . --json > cloc.json
           
 
-       - name: Append cloc json
-         run: |
-          echo "" >> test/newFile.json
-          echo "CLOC JSON OUTPUT:" >> json/newFile.json
-          cat cloc.jsonc >> json/newFile.json
+      #  - name: Append cloc json
+      #    run: |
+      #     echo "" >> test/newFile.json
+      #     echo "CLOC JSON OUTPUT:" >> json/newFile.json
+      #     cat cloc.jsonc >> json/newFile.json
 
 
      
