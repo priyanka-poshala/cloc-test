@@ -23,12 +23,19 @@ jobs:
       - name: Install CLOC
         run: sudo apt-get install -y cloc
       
-      - name: Count Lines Of Code and Save to newFile.json
+      - name: Generate cloc json
         run: |
-          cloc . --json > newFile.json
+          cloc . --json > cloc.json
           echo "" >> test/newFile.json
           echo "CLOC JSON OUTPUT:" >> json/newFile.json
           cat cloc.jsonc >> json/newFile.json
+
+       - name: Append cloc json
+         run: |
+          echo "" >> test/newFile.json
+          echo "CLOC JSON OUTPUT:" >> json/newFile.json
+          cat cloc.jsonc >> json/newFile.json
+
 
      
       - name: Commit and Push Changes
