@@ -20,11 +20,11 @@ jobs:
           ls -l
       - name: Install CLOC
         run: |
-          sudo apt install cloc
+          sudo apt install cloc jq
       - name: Generate cloc json
         run: |
           cloc . --json > test/cloc.json
-       
+          jq . test/cloc.json > test/cloc.json
       - name: Commit and Push Changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
