@@ -20,7 +20,7 @@ jobs:
           ls -l
       - name: Install CLOC
         run: |
-          sudo yum install -y cloc
+          sudo apt install cloc
        
       - name: Commit and Push Changes
         env:
