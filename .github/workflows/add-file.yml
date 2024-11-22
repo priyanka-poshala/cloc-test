@@ -18,11 +18,11 @@ jobs:
           echo "This is the content of the new file 1." > json/newFile.txt
           echo pwd
           ls -l
-      - name: Install CLOC
-        run: |
-          sudo apt-get install -y cloc
-          echo pwd
-          ls -l
+      # - name: Install CLOC
+      #   run: |
+      #     sudo apt-get install -y cloc
+      #     echo pwd
+      #     ls -l
        
       - name: Commit and Push Changes
         env:
